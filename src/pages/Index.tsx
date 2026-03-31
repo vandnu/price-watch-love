@@ -111,7 +111,7 @@ const Index = () => {
         <footer className="container mx-auto px-4 py-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <p className="font-body text-xs text-center text-muted-foreground">
-              © {new Date().getFullYear()} Prisudvikling.dk — Data fra Danmarks Statistik og Forbrugerrådet Tænk
+              © 2026 detkoster.dk — Data fra Danmarks Statistik og Forbrugerrådet Tænk
             </p>
             <Link to="/oeko" className="font-body text-xs text-accent hover:underline">
               Øko-sammenligning
