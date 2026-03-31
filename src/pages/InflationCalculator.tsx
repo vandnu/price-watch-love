@@ -118,9 +118,14 @@ const InflationCalculator = () => {
                 <p className="font-body text-xs text-muted-foreground mb-2">
                   Baseret på {selectedProducts.length} valgte varer
                 </p>
-                <Button onClick={handleShare} variant="outline" size="sm">
-                  📋 Del dit resultat
-                </Button>
+                <div className="flex gap-2">
+                  <Button onClick={scrollToWrapped} size="sm">
+                    🎨 Se dit kort →
+                  </Button>
+                  <Button onClick={handleShare} variant="outline" size="sm">
+                    📋 Kopiér
+                  </Button>
+                </div>
               </div>
             </div>
 
