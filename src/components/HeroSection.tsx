@@ -1,3 +1,7 @@
+import { products } from "@/data/priceData";
+
+const productCount = products.length;
+
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-secondary via-background to-background">
@@ -18,7 +22,7 @@ const HeroSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 max-w-3xl">
           <StatCard label="Indkøbsposer" value="+400%" sublabel="siden 2015" />
           <StatCard label="Olivenolie" value="+133%" sublabel="siden 2015" />
-          <StatCard label="Kaffe" value="+108%" sublabel="siden 2015" />
+          <StatCard label="Sriracha" value="+125%" sublabel="siden 2015" />
           <StatCard label="Officiel inflation" value="+19,6%" sublabel="kumulativ" />
         </div>
 
@@ -30,8 +34,6 @@ const HeroSection = () => {
     </section>
   );
 };
-
-const productCount = 25;
 
 const StatCard = ({ label, value, sublabel }: { label: string; value: string; sublabel: string }) => (
   <div className="bg-card/80 backdrop-blur-sm rounded-lg border border-border p-4 md:p-5">

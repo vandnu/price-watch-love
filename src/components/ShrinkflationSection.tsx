@@ -7,7 +7,7 @@ const ShrinkflationSection = () => {
     <section className="container mx-auto px-4 py-12 md:py-16">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
-          Shrinkflation — den skjulte prisstigning
+          Forstå også shrinkflation
         </h2>
         <p className="font-body text-muted-foreground mb-8 max-w-2xl">
           Shrinkflation sker, når producenter reducerer mængden i et produkt uden at sænke prisen.
