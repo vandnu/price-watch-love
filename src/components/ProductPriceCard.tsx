@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Area, AreaChart } from "recharts";
+import { XAxis, YAxis, Tooltip, ResponsiveContainer, Area, AreaChart } from "recharts";
 import type { Product } from "@/data/priceData";
 import { inflationData } from "@/data/priceData";
 
@@ -9,6 +9,8 @@ const chartColors = [
   "hsl(280, 45%, 55%)",
   "hsl(35, 85%, 55%)",
   "hsl(190, 60%, 45%)",
+  "hsl(340, 65%, 50%)",
+  "hsl(45, 70%, 50%)",
 ];
 
 type Props = {
@@ -19,6 +21,8 @@ type Props = {
 const ProductPriceCard = ({ product, index }: Props) => {
   const color = chartColors[index % chartColors.length];
   const basePrice = product.priceHistory[0].price;
+  const firstYear = product.priceHistory[0].year;
+  const lastYear = product.priceHistory[product.priceHistory.length - 1].year;
 
   const chartData = product.priceHistory.map((p) => {
     const inf = inflationData.find((i) => i.year === p.year);
@@ -45,8 +49,11 @@ const ProductPriceCard = ({ product, index }: Props) => {
             <p className="font-display text-2xl font-bold text-foreground">
               {product.currentPrice.toFixed(2).replace(".", ",")} kr
             </p>
-            <p className="font-body text-sm font-semibold text-accent">
+            <p className="font-body text-sm font-semibold text-accent" title={`Prisstigning fra ${firstYear} til ${lastYear}`}>
               +{product.priceChange}%
+            </p>
+            <p className="font-body text-[10px] text-muted-foreground">
+              {firstYear}–{lastYear}
             </p>
           </div>
         </div>
