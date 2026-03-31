@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import OekoComparison from "./pages/OekoComparison.tsx";
 import InflationCalculator from "./pages/InflationCalculator.tsx";
 import ShrinkflationHallOfShame from "./pages/ShrinkflationHallOfShame.tsx";
+import OmData from "./pages/OmData.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
