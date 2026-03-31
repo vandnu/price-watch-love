@@ -7,6 +7,7 @@ import ShrinkflationSection from "@/components/ShrinkflationSection";
 import MethodologySection from "@/components/MethodologySection";
 import { products, type SortOption } from "@/data/priceData";
 import { Link } from "react-router-dom";
+import { products as allProducts } from "@/data/priceData";
 
 const Index = () => {
   const [category, setCategory] = useState("Alle");
