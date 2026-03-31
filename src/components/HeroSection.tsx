@@ -1,19 +1,6 @@
-import heroImage from "@/assets/hero-inflation.jpg";
-
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Dagligvarer med stigende priser illustreret med opadgående pile"
-          width={1920}
-          height={800}
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-      </div>
-
+    <section className="relative overflow-hidden bg-gradient-to-b from-secondary via-background to-background">
       <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl">
           <p className="font-body text-sm md:text-base font-semibold uppercase tracking-widest text-accent mb-4">
@@ -30,8 +17,8 @@ const HeroSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 max-w-3xl">
           <StatCard label="Olivenolie" value="+133%" sublabel="siden 2015" />
-          <StatCard label="Pingvin Stang" value="+100%" sublabel="siden 2015" />
-          <StatCard label="KiMs Chips" value="+74%" sublabel="siden 2015" />
+          <StatCard label="Spaghetti" value="+77%" sublabel="siden 2015" />
+          <StatCard label="KiMs Havsalt" value="+74%" sublabel="siden 2015" />
           <StatCard label="Officiel inflation" value="+19,6%" sublabel="kumulativ" />
         </div>
       </div>
