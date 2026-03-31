@@ -136,7 +136,15 @@ const ProductPriceCard = ({ product, index }: Props) => {
         )}
 
         <p className="font-body text-[10px] text-muted-foreground mt-3">
-          Kilde: {product.source}
+          Kilde:{" "}
+          <a
+            href={product.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground transition-colors"
+          >
+            {product.source}
+          </a>
         </p>
       </div>
     </article>

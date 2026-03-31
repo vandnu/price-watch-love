@@ -17,8 +17,8 @@ const HeroSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 max-w-3xl">
           <StatCard label="Olivenolie" value="+133%" sublabel="siden 2015" />
+          <StatCard label="Pingvin Stang" value="+100%" sublabel="siden 2015" />
           <StatCard label="Spaghetti" value="+77%" sublabel="siden 2015" />
-          <StatCard label="KiMs Havsalt" value="+74%" sublabel="siden 2015" />
           <StatCard label="Officiel inflation" value="+19,6%" sublabel="kumulativ" />
         </div>
       </div>
