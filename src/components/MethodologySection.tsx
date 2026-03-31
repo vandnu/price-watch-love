@@ -11,6 +11,10 @@ const MethodologySection = () => (
         Shrinkflation-observationerne er dokumenteret af Forbrugerrådet Tænk samt egne observationer
         af produktstørrelser over tid. Bemærk at priserne kan variere mellem butikskæder og regioner.
       </p>
+      <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
+        Der tages ikke hensyn til tilbudspriser — alle priser er baseret på vejledende normalpriser
+        i danske supermarkeder.
+      </p>
       <p className="font-body text-xs text-muted-foreground">
         Sidst opdateret: marts 2025 · Priserne er vejledende og kan variere.
       </p>
