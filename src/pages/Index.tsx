@@ -7,6 +7,7 @@ import ShrinkflationSection from "@/components/ShrinkflationSection";
 import MethodologySection from "@/components/MethodologySection";
 import { products, type SortOption } from "@/data/priceData";
 import { Link } from "react-router-dom";
+import { products as allProducts } from "@/data/priceData";
 
 const Index = () => {
   const [category, setCategory] = useState("Alle");
@@ -67,7 +68,21 @@ const Index = () => {
         </section>
 
         <InflationComparisonChart />
-        <ShrinkflationSection />
+
+        {/* Shrinkflation teaser */}
+        <section className="container mx-auto px-4 py-12 md:py-16">
+          <div className="max-w-4xl mx-auto">
+            <ShrinkflationSection />
+            <div className="text-center mt-8">
+              <Link
+                to="/shrinkflation"
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-body font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Se alle i Hall of Shame →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Eco comparison CTA */}
         <section className="container mx-auto px-4 py-12 md:py-16">
@@ -96,7 +111,7 @@ const Index = () => {
         <footer className="container mx-auto px-4 py-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <p className="font-body text-xs text-center text-muted-foreground">
-              © {new Date().getFullYear()} Prisudvikling.dk — Data fra Danmarks Statistik og Forbrugerrådet Tænk
+              © 2026 detkoster.dk — Data fra Danmarks Statistik og Forbrugerrådet Tænk
             </p>
             <Link to="/oeko" className="font-body text-xs text-accent hover:underline">
               Øko-sammenligning

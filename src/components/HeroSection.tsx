@@ -1,4 +1,5 @@
 import { products } from "@/data/priceData";
+import { Link } from "react-router-dom";
 
 const productCount = products.length;
 
@@ -24,6 +25,21 @@ const HeroSection = () => {
           <StatCard label="Olivenolie" value="+133%" sublabel="siden 2015" />
           <StatCard label="Sriracha" value="+125%" sublabel="siden 2015" />
           <StatCard label="Officiel inflation" value="+19,6%" sublabel="kumulativ" />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 mt-10">
+          <Link
+            to="/beregner"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-body font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+          >
+            🧮 Beregn din egen inflation →
+          </Link>
+          <Link
+            to="/shrinkflation"
+            className="inline-flex items-center justify-center gap-2 bg-card border border-border text-foreground font-body font-semibold px-6 py-3 rounded-lg hover:bg-secondary transition-colors"
+          >
+            🏴 Shrinkflation Hall of Shame
+          </Link>
         </div>
 
         <p className="font-body text-xs text-muted-foreground mt-8 max-w-2xl">
