@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { products, inflationData } from "@/data/priceData";
 
 const colors = [
@@ -8,7 +8,16 @@ const colors = [
   "hsl(280, 45%, 55%)",
   "hsl(35, 85%, 55%)",
   "hsl(190, 60%, 45%)",
+  "hsl(340, 65%, 50%)",
+  "hsl(45, 70%, 50%)",
+  "hsl(100, 45%, 45%)",
+  "hsl(0, 60%, 50%)",
 ];
+
+// Show top 8 by price change to keep chart readable
+const topProducts = [...products]
+  .sort((a, b) => b.priceChange - a.priceChange)
+  .slice(0, 8);
 
 const InflationComparisonChart = () => {
   const chartData = inflationData.map((inf) => {
@@ -16,7 +25,7 @@ const InflationComparisonChart = () => {
       year: inf.year,
       inflation: inf.cumulative,
     };
-    products.forEach((product) => {
+    topProducts.forEach((product) => {
       const entry = product.priceHistory.find((p) => p.year === inf.year);
       const base = product.priceHistory[0].price;
       if (entry) {
@@ -33,8 +42,8 @@ const InflationComparisonChart = () => {
           Prisudvikling vs. inflation
         </h2>
         <p className="font-body text-muted-foreground mb-8 max-w-2xl">
-          Alle varer indekseret til 100 i 2015. Den stiplede linje viser den officielle forbrugerprisinflation fra Danmarks Statistik.
-          Alt over den linje er steget mere end inflationen.
+          Top 8 varer med størst prisstigning, indekseret til 100 i 2015. Den stiplede linje viser den officielle
+          forbrugerprisinflation fra Danmarks Statistik. Alt over den linje er steget mere end inflationen.
         </p>
 
         <div className="bg-card rounded-xl border border-border p-4 md:p-6">
@@ -53,13 +62,13 @@ const InflationComparisonChart = () => {
                   tickLine={false}
                   tickFormatter={(v) => `${v}`}
                   width={40}
-                  domain={[90, 250]}
+                  domain={[90, "auto"]}
                 />
                 <Tooltip
                   formatter={(value: number, name: string) => {
                     const label = name === "inflation"
                       ? "Officiel inflation"
-                      : products.find((p) => p.id === name)?.name ?? name;
+                      : topProducts.find((p) => p.id === name)?.name ?? name;
                     return [`${value.toFixed(1)}`, label];
                   }}
                   labelFormatter={(l) => `År ${l}`}
@@ -79,12 +88,12 @@ const InflationComparisonChart = () => {
                   dot={false}
                   name="inflation"
                 />
-                {products.map((product, i) => (
+                {topProducts.map((product, i) => (
                   <Line
                     key={product.id}
                     type="monotone"
                     dataKey={product.id}
-                    stroke={colors[i]}
+                    stroke={colors[i % colors.length]}
                     strokeWidth={2}
                     dot={false}
                     name={product.id}
@@ -99,9 +108,9 @@ const InflationComparisonChart = () => {
               <span className="w-4 h-0.5 border-t-2 border-dashed border-muted-foreground" />
               Officiel inflation
             </span>
-            {products.map((product, i) => (
+            {topProducts.map((product, i) => (
               <span key={product.id} className="flex items-center gap-1.5">
-                <span className="w-4 h-0.5 rounded" style={{ backgroundColor: colors[i] }} />
+                <span className="w-4 h-0.5 rounded" style={{ backgroundColor: colors[i % colors.length] }} />
                 {product.emoji} {product.name}
               </span>
             ))}
