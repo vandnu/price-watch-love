@@ -69,6 +69,12 @@ const InflationCalculator = () => {
     }
   };
 
+  const wrappedRef = useRef<HTMLDivElement>(null);
+
+  const scrollToWrapped = () => {
+    wrappedRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <head>
