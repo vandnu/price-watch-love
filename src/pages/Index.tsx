@@ -68,7 +68,21 @@ const Index = () => {
         </section>
 
         <InflationComparisonChart />
-        <ShrinkflationSection />
+
+        {/* Shrinkflation teaser */}
+        <section className="container mx-auto px-4 py-12 md:py-16">
+          <div className="max-w-4xl mx-auto">
+            <ShrinkflationSection />
+            <div className="text-center mt-8">
+              <Link
+                to="/shrinkflation"
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-body font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Se alle i Hall of Shame →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Eco comparison CTA */}
         <section className="container mx-auto px-4 py-12 md:py-16">
