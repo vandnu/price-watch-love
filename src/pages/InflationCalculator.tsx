@@ -167,6 +167,20 @@ const InflationCalculator = () => {
             </div>
           </div>
 
+          {/* Wrapped card */}
+          <div ref={wrappedRef} className="bg-card rounded-xl border border-border p-6 md:p-10 mb-10">
+            <h2 className="font-display text-xl font-bold text-foreground mb-2">
+              🎨 Din Inflation Wrapped
+            </h2>
+            <p className="font-body text-sm text-muted-foreground mb-6">
+              Download eller del dit personlige inflationskort på sociale medier.
+            </p>
+            <InflationWrappedCard
+              personalInflation={personalInflation}
+              selectedProducts={selectedProducts}
+            />
+          </div>
+
           {/* Product selector */}
           <div className="bg-card rounded-xl border border-border p-6">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
