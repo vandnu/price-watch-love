@@ -116,6 +116,9 @@ const Index = () => {
             <Link to="/oeko" className="font-body text-xs text-accent hover:underline">
               Øko-sammenligning
             </Link>
+            <Link to="/om-data" className="font-body text-xs text-accent hover:underline">
+              Metode og kilder
+            </Link>
           </div>
         </footer>
       </div>

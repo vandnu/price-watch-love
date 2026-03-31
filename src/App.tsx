@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import OekoComparison from "./pages/OekoComparison.tsx";
 import InflationCalculator from "./pages/InflationCalculator.tsx";
 import ShrinkflationHallOfShame from "./pages/ShrinkflationHallOfShame.tsx";
+import OmData from "./pages/OmData.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/oeko" element={<OekoComparison />} />
           <Route path="/beregner" element={<InflationCalculator />} />
           <Route path="/shrinkflation" element={<ShrinkflationHallOfShame />} />
+          <Route path="/om-data" element={<OmData />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

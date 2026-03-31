@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { products, inflationData } from "@/data/priceData";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { toast } from "@/hooks/use-toast";
+import InflationWrappedCard from "@/components/InflationWrappedCard";
 
 const defaultSelected = new Set([
   "olivenolie", "havregryn", "bananer", "rugbroed", "pasta",
@@ -68,6 +69,12 @@ const InflationCalculator = () => {
     }
   };
 
+  const wrappedRef = useRef<HTMLDivElement>(null);
+
+  const scrollToWrapped = () => {
+    wrappedRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <head>
@@ -111,9 +118,14 @@ const InflationCalculator = () => {
                 <p className="font-body text-xs text-muted-foreground mb-2">
                   Baseret på {selectedProducts.length} valgte varer
                 </p>
-                <Button onClick={handleShare} variant="outline" size="sm">
-                  📋 Del dit resultat
-                </Button>
+                <div className="flex gap-2">
+                  <Button onClick={scrollToWrapped} size="sm">
+                    🎨 Se dit kort →
+                  </Button>
+                  <Button onClick={handleShare} variant="outline" size="sm">
+                    📋 Kopiér
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -153,6 +165,20 @@ const InflationCalculator = () => {
                 Officiel inflation
               </span>
             </div>
+          </div>
+
+          {/* Wrapped card */}
+          <div ref={wrappedRef} className="bg-card rounded-xl border border-border p-6 md:p-10 mb-10">
+            <h2 className="font-display text-xl font-bold text-foreground mb-2">
+              🎨 Din Inflation Wrapped
+            </h2>
+            <p className="font-body text-sm text-muted-foreground mb-6">
+              Download eller del dit personlige inflationskort på sociale medier.
+            </p>
+            <InflationWrappedCard
+              personalInflation={personalInflation}
+              selectedProducts={selectedProducts}
+            />
           </div>
 
           {/* Product selector */}
