@@ -675,8 +675,8 @@ export const products: Product[] = [
       { year: 2023, price: 5.0 },
       { year: 2024, price: 5.0 },
     ],
-    source: "Dansk Erhverv, posetillaeg.dk",
-    sourceUrl: "https://www.LovableRemovingSourcesWhenFabricated.dk",
+    source: "Miljøministeriet, afgiftslovgivning",
+    sourceUrl: "https://www.dst.dk/da/Statistik/emner/oekonomi/forbrugerpriser/forbrugerprisindeks",
   },
   {
     id: "haandsprit",
