@@ -25,6 +25,7 @@ const App = () => (
           <Route path="/oeko" element={<OekoComparison />} />
           <Route path="/beregner" element={<InflationCalculator />} />
           <Route path="/shrinkflation" element={<ShrinkflationHallOfShame />} />
+          <Route path="/om-data" element={<OmData />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
