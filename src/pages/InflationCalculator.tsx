@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { products, inflationData } from "@/data/priceData";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { toast } from "@/hooks/use-toast";
+import InflationWrappedCard from "@/components/InflationWrappedCard";
 
 const defaultSelected = new Set([
   "olivenolie", "havregryn", "bananer", "rugbroed", "pasta",
